@@ -127,6 +127,24 @@ class Calc
   */
   bool CheckParens();
 
+  /* 
+   pre:  invoked from Parse 
+   post: turns didget string into letter. 
+  */ 
+  void toLetter(int first, int last);
+
+  /* 
+   pre:  invoked from Parse 
+   post: sends digits to valuetable. 
+  */ 
+  void toValueTable(int first, int last);
+
+  /* 
+   pre:  invoked from checkParens
+   post: checks to see if stack is empty 
+  */ 
+  bool isEmpty();
+
   char*  inFix;     //null-terminated string that holds infix expression 
   int*  valueTbl;   //pointer to an array holding variable and expression values 
   int valueIdx;    //index of the next available position in valueTbl
